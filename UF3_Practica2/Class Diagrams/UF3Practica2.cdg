@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="UF3Practica2">
+  <ClassDiagramComponents>
+    <Class name="Copia" package="" visibility="public" xPosition="160.0" yPosition="8.0">
+      <Fields>
+        <Field name="identificador" type="int" visibility="private"/>
+        <Field name="estat" type="estadoCopia" visibility="private"/>
+        <Field name="lector" type="Lector" visibility="private"/>
+        <Field name="original" type="Llibre" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Copia" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="Llibre" name="l"/>
+        </Method>
+        <Method name="prestar" returnType="void" visibility="public">
+          <Argument type="Lector" name="l"/>
+        </Method>
+        <Method name="getIdentificador" returnType="int" visibility="public"/>
+        <Method name="getEstado" returnType="estadoCopia" visibility="public"/>
+        <Method name="setEstado" returnType="void" visibility="public">
+          <Argument type="estadoCopia" name="ec"/>
+        </Method>
+        <Method name="getLector" returnType="Lector" visibility="public"/>
+        <Method name="setLector" returnType="void" visibility="public">
+          <Argument type="Lector" name="l"/>
+        </Method>
+        <Method name="getOriginal" returnType="Llibre" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Llibre" package="" visibility="public" xPosition="86.0" yPosition="427.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="tipus" type="tipusLlibre" visibility="private"/>
+        <Field name="editorial" type="String" visibility="private"/>
+        <Field name="any" type="int" visibility="private"/>
+        <Field name="autors" type="ArrayList&lt;Autor&gt;" visibility="private"/>
+        <Field name="copias" type="ArrayList&lt;Copia&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Llibre" returnType="void" visibility="public">
+          <Argument type="String" name="non"/>
+          <Argument type="tipusLlibre" name="t"/>
+          <Argument type="String" name="ed"/>
+          <Argument type="int" name="any"/>
+        </Method>
+        <Method name="getTipus" returnType="tipusLlibre" visibility="public"/>
+        <Method name="setTipus" returnType="void" visibility="public">
+          <Argument type="tipusLlibre" name="t"/>
+        </Method>
+        <Method name="getEditorial" returnType="String" visibility="public"/>
+        <Method name="setEditorial" returnType="void" visibility="public">
+          <Argument type="String" name="e"/>
+        </Method>
+        <Method name="getAny" returnType="int" visibility="public"/>
+        <Method name="setAny" returnType="void" visibility="public">
+          <Argument type="int" name="any"/>
+        </Method>
+        <Method name="getNom" returnType="String" visibility="public"/>
+        <Method name="afegirCopia" returnType="void" visibility="public">
+          <Argument type="Copia" name="c"/>
+        </Method>
+        <Method name="treureCopia" returnType="void" visibility="public">
+          <Argument type="Copia" name="c"/>
+        </Method>
+        <Method name="afegirAutor" returnType="void" visibility="public">
+          <Argument type="Autor" name="a"/>
+        </Method>
+        <Method name="treureAutor" returnType="void" visibility="public">
+          <Argument type="Autor" name="a"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Autor" package="" visibility="public" xPosition="728.0" yPosition="430.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="nacionalitat" type="String" visibility="private"/>
+        <Field name="dataNaixement" type="Date" visibility="private"/>
+        <Field name="llibres" type="ArrayList&lt;Llibre&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Autor" returnType="void" visibility="public">
+          <Argument type="String" name="nom"/>
+          <Argument type="String" name="nac"/>
+          <Argument type="Date" name="naix"/>
+        </Method>
+        <Method name="getNom" returnType="String" visibility="public"/>
+        <Method name="getNac" returnType="String" visibility="public"/>
+        <Method name="setNac" returnType="void" visibility="public">
+          <Argument type="String" name="n"/>
+        </Method>
+        <Method name="getNaixement" returnType="Date" visibility="public"/>
+        <Method name="setNaixement" returnType="void" visibility="public">
+          <Argument type="Date" name="n"/>
+        </Method>
+        <Method name="afegirLlibre" returnType="void" visibility="public">
+          <Argument type="Llibre" name="l"/>
+        </Method>
+        <Method name="treureLlibre" returnType="void" visibility="public">
+          <Argument type="Llibre" name="l"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Lector" package="" visibility="public" xPosition="472.0" yPosition="26.0">
+      <Fields>
+        <Field name="idSoci" type="int" visibility="private"/>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="telefon" type="String" visibility="private"/>
+        <Field name="copias" type="ArrayList&lt;Copia&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Lector" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="nom"/>
+          <Argument type="String" name="tel"/>
+        </Method>
+        <Method name="devolver" returnType="void" visibility="public">
+          <Argument type="Copia" name="c"/>
+        </Method>
+        <Method name="prestar" returnType="void" visibility="public">
+          <Argument type="Copia" name="c"/>
+        </Method>
+        <Method name="getIdSoci" returnType="int" visibility="public"/>
+        <Method name="getNom" returnType="String" visibility="public"/>
+        <Method name="setNom" returnType="void" visibility="public">
+          <Argument type="String" name="n"/>
+        </Method>
+        <Method name="getTelefon" returnType="String" visibility="public"/>
+        <Method name="setTelefon" returnType="void" visibility="public">
+          <Argument type="String" name="tel"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Enum name="estadoCopia" package="" visibility="public" xPosition="781.0" yPosition="53.0">
+      <Literals>
+        <Literal name="biblioteca"/>
+        <Literal name="prestada"/>
+        <Literal name="retard"/>
+        <Literal name="reparacio"/>
+      </Literals>
+    </Enum>
+    <Enum name="tipusLlibre" package="" visibility="public" xPosition="781.0" yPosition="214.0">
+      <Literals>
+        <Literal name="enginyeria"/>
+        <Literal name="literartura"/>
+        <Literal name="informatica"/>
+        <Literal name="historia"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="te" source="Lector" target="Copia" type="Aggregation" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+    <HasRelation name="te" source="Llibre" target="Copia" type="Composition" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+    <HasRelation name="esEscrit" source="Llibre" target="Autor" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+    <HasRelation name="escriu" source="Autor" target="Llibre" type="Composition" sourceCardinality="0..1" targetCardinality="1..*" collectionType="ArrayList"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
